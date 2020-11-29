@@ -5,8 +5,6 @@
 | nickname             | string | null: false |
 | email                | string | null: false |
 | image                | string | null: false |
-| last_name            | string | null: false |
-| first_name           | string | null: false |
 
 ### Association
 
@@ -36,6 +34,17 @@
 | text            | integer   | null: false                    |
 | tweet_id        | string    | null: false                    |
 | user_id         | string    | null: false                    |
+
+### Association
+- belongs_to :tweet
+- belongs_to :user 
+
+
+## goodテーブル
+| Column               | Type   | Options     |
+| -------------------  | ------ | ----------- |
+| user_id              | string | null: false |
+| tweets_id            | string | null: false |
 
 ### Association
 - belongs_to :tweet

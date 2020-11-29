@@ -3,3 +3,14 @@
   <%= form.text_area :text, placeholder: "text", rows: "10" %>
   <%= form.submit "SEND" %>
 <% end %>
+ <% if current_user.already_favorited?(@tweets) %>
+  <%= link_to tweet_favorites_path(tweet), method: :delete do %>
+    <i class="fas fa-heart"></i>
+  <% end %>
+  <%= tweet.favorites.count %>
+<% else %>
+  <%= link_to tweet_favorites_path(@tweets), method: :post do %>
+    <i class="far fa-heart"></i>
+  <% end %>
+  <%= tweet.favorites.count %>
+<% end %>
