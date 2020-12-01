@@ -4,4 +4,9 @@ class UsersController < ApplicationController
     @nickname = user.nickname
     @tweets = user.tweets
   end
+
+  def already_favorited?(tweet_id)
+    @tweet = user.search(pa_rams[:keyword])
+  end
+  
 end
