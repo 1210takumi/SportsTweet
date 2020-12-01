@@ -7,9 +7,16 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://kit.fontawesome.com/afffe6c3fd.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
+    <% if flash[:notice] %>
+      <div class="alert alert-primary" role="alert"><strong><%= notice %></strong></div>
+    <% end %>
+    <% if flash[:alert] %>
+      <div class="alert alert-danger" role="alert"><strong><%= alert %></strong></div>
+    <% end %>
       <header class="header">
       <div class="header__bar row">
         <h1 class="grid-6"><a href="/">SportsTweet</a></h1>
