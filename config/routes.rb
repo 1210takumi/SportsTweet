@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     end
   end
   resources :users, only: :show
-  resources :tweets do
-    resource :favorites, only: [:create, :destroy]
-  end
+  # resources :tweets do
+  #   resource :favorites, only: [:create, :destroy]
+  # end
 end
